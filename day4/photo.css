@@ -1,0 +1,30 @@
+body{
+    margin:20px;
+    font-family:Arial;
+    background:#f2f2f2;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.gallery img:hover{
+    transform:scale(1.05);
+    transition:0.3s;
+}
+@media(max-width:768px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media(max-width:500px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}

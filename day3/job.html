@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Form</title>
+    <link rel="stylesheet" type="text/css" href="job.css">
+</head>
+<body>
+    <h2>Job Application Form</h2>
+    <form>
+        <label>Full Name:</label><br>
+        <input type="text" placeholder="Enter your full name" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter your email" required><br><br>
+        <label>Phone Number:</label><br>
+        <input type="tel" placeholder="Enter your phone number" required><br><br>
+        <label>Gender:</label><br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <br><br>
+        <label>Qualification:</label><br>
+        <select required>
+            <option value="">Select Qualification</option>
+            <option>B.Tech</option>
+            <option>B.Sc</option>
+            <option>BCA</option>
+            <option>MCA</option>
+        </select>
+        <br><br>
+        <label>Job Role:</label><br>
+        <select required>
+            <option value="">Select Job Role</option>
+            <option>Software Developer</option>
+            <option>Web Developer</option>
+            <option>Data Analyst</option>
+            <option>UI Designer</option>
+        </select>
+        <br><br>
+        <label>Skills:</label><br>
+        <input type="checkbox"> HTML
+        <input type="checkbox"> CSS
+        <input type="checkbox"> JavaScript
+        <input type="checkbox"> Java
+        <br><br>
+        <label>Projects:</label><br>
+        <textarea rows="4" cols="35" placeholder="Describe your projects"></textarea>
+        <br><br>
+        <label>Achievements:</label><br>
+        <textarea rows="4" cols="35" placeholder="Mention your achievements or certifications"></textarea>
+        <br><br>
+        <label>Address:</label><br>
+        <textarea rows="4" cols="35" placeholder="Enter your address"></textarea>
+        <br><br>
+        <input type="submit" value="Apply">
+        <input type="reset" value="Clear">
+    </form>
+</body>
+</html>

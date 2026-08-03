@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Convert to Uppercase</title>
+    </head>
+    <body>
+        <h3>Converting Strings to Uppercase Using Map Method</h3>
+        <p>Original Strings: ["trinisha","monisha","surekha"]</p>
+        <h3 id="res"></h3>
+        <script>
+            let strings=["trinisha","monisha","surekha"];
+            let uppercaseStrings=strings.map(s=>s.toUpperCase());
+            document.getElementById('res').innerHTML = 'Uppercase Strings: ' + uppercaseStrings.join(', ');
+        </script>
+    </body>
+</html>

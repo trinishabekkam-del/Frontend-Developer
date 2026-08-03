@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Double Each Number</title>
+    </head>
+    <body>
+        <h3>Doubling Each Number In An Array Using Map Method</h3>
+        <p>Original Numbers: [1, 2, 3, 4, 5]</p>
+        <h3 id="res"></h3>
+        <script>
+            let numbers=[1,2,3,4,5];
+            let doubledNumbers=numbers.map(n=>n*2);
+            document.getElementById('res').innerHTML = 'Doubled Numbers: ' + doubledNumbers.join(', ');
+        </script>
+    </body>
+</html>

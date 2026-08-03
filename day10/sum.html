@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum of Array Elements</title>
+</head>
+<body>
+    <h1>SUM OF ARRAY ELEMENTS</h1>
+    <h3>Original Array: [5,6,7,4,9]</h3>
+    <h3 id="res"></h3>
+</body>
+<script>
+    let arr = [5,6,7,4,9];
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    console.log(sum);
+
+    document.getElementById("res").innerHTML = "Sum of Array Elements: " + sum;
+</script>
+</html>

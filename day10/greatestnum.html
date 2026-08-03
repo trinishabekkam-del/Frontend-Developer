@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Maximum Number in an array</h1>
+    <h3>Original Array: [10, 20, 15, 90, 65]</h3>
+    <h3 id="res"></h3>
+</body>
+<script>
+    let arr = [10, 20, 15, 90, 65];
+    let maxNum = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > maxNum) {
+            maxNum = arr[i];
+        }
+    }
+    console.log(maxNum);
+    document.getElementById("res").innerHTML = "Maximum Number in Array: " + maxNum;
+</script>
+</html>

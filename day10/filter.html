@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Numbers Greater Than 50 using Filter Method</title>
+    </head>
+    <body>
+        <h3>Numbers Greater Than 50 using Filter Method</h3>
+        <p>Original Numbers: [10, 25, 50, 75, 100]</p>
+        <h3 id="res"></h3>
+        <script>
+            let numbers = [10, 25, 50, 75, 100];
+            let filteredNumbers = numbers.filter(n => n > 50);
+            document.getElementById('res').innerHTML='Numbers Greater Than 50: ' + filteredNumbers.join(', ');
+        </script>
+    </body>
+</html>

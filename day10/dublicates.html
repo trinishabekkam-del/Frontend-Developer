@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dublicates</title>
+</head>
+<body>
+    <h2>Finding Duplicates in an Array  </h2>
+    <p>Original Array: [1, 2, 3, 2, 4, 5, 3]</p>
+    <h3 id="res"></h3>
+    <script>
+        let arr = [1, 2, 3, 2, 4, 5, 3];
+        let duplicate=[];
+        for(let i=0;i<arr.length;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[i]===arr[j]){
+                    duplicate.push(arr[i]);
+                    break;
+                }
+            }
+        }
+    </script>
+    document.getElementById("res").innerHTML = "Duplicate Elements in Array: " + duplicate.join(', ');
+        </body>

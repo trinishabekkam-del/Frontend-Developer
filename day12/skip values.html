@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Skip Values in array Destructuring</title>
+    </head>
+    <body>
+        <h1>Skip Values in array Destructuring</h1>
+        <p id="output"></p>
+        <script>
+            const numbers = [10,20,30,40,50];
+            const [first, , third] = numbers;
+            const output = `${first}, ${third}`;
+            document.getElementById('output').innerHTML = output;
+            console.log(output);
+        </script>
+    </body>
+</html>

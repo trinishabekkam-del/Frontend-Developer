@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array Destructuring</title>
+    </head>
+    <body>
+        <h1>Array Destructuring</h1>
+        <p id="output"></p>
+        <script>
+            const colors = ["red", "green", "blue"];
+            const [first, second, third] = colors;
+            const output = `${first}, ${second}, ${third}`;
+            document.getElementById('output').innerHTML = output;
+            console.log(output);
+        </script>
+    </body>
+</html>

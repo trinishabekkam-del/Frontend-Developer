@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Default Values</title>
+    </head>
+    <body>
+        <h1>Default Values</h1>
+        <p>if a property doesnot exit, you can provide a default value.</p>
+        <p id="output"></p>
+        <script>
+            const user = {name: "Trinisha"};
+            const { name, city = "Bhimavaram" } = user;
+            const output = `${name} ${city}`;
+            document.getElementById('output').innerHTML = output;
+            console.log(output);
+        </script>
+    </body>
+</html>

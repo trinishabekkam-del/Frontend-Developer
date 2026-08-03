@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rename Variables</title>
+    </head>
+    <body>
+        <h1>Rename Variables</h1>
+        <p id="output"></p>
+        <script>
+            const employee = { id:1225, name:"Trinisha", dept:"IT", age:20 };
+            const { id, name, dept: department, age } = employee;
+            const output = `${name} ${age}`;
+            document.getElementById('output').innerHTML = output;
+            console.log(output);
+        </script>
+    </body>
+</html>

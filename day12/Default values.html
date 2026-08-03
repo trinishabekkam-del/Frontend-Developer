@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Default Values in Array Destructuring</title>
+    </head>
+    <body>
+        <h1>Default Values in Array Destructuring</h1>
+        <p id="output"></p>
+        <script>
+            const numbers = [100];
+            const [a,b=200] = numbers;
+            const output = `${a}, ${b}`;
+            document.getElementById('output').innerHTML = output;
+            console.log(output);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Object Destructuring</title>
+</head>
+<body>
+  <h1>Basic Object Destructuring</h1>
+  <p id="output"></p>
+  <script>
+    const employee = { id: 101, name: "Trinisha", dept: "IT", age:20 };
+    const { id, name, dept: department, age } = employee;
+    const output = `${name} ${age}`;
+    document.getElementById('output').innerHTML = output;
+    console.log(output);
+  </script>
+</body>
+</html>

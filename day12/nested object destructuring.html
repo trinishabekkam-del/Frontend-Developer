@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nested Object Destructuring</title>
+    </head>
+    <body>
+        <h1>Nested Object Destructuring</h1>
+        <p id="output"></p>
+        <script>
+            const employee = {name:"Trinisha",address:{
+                    city:"Bhimavaram",
+                    state:"AP"
+                }
+            };
+            const {name,age,address: {city,state } } = employee;
+            const output = `${city} ${state}`;
+            document.getElementById('output').innerHTML = output;
+            console.log(output);
+        </script>
+</html>

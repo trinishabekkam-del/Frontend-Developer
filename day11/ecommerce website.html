@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Simple E-Commerce Website</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{
+    background:#f5f5f5;
+}
+.product-card{
+    transition:0.3s;
+}
+.product-card:hover{
+    transform:scale(1.03);
+}
+img{
+    height:220px;
+    object-fit:cover;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="#">ShopEasy</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav me-auto">
+<li class="nav-item">
+<a class="nav-link active" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Products</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Contact</a>
+</li>
+</ul>
+<input type="text" class="form-control w-25 me-3" placeholder="Search Product" id="search">
+<button class="btn btn-warning">Cart
+<span class="badge bg-danger" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="container mt-4">
+<div class="row" id="products">
+<div class="col-md-4 mb-4 product">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" class="card-img-top">
+<div class="card-body">
+<h4 class="product-name">Smart Phone</h4>
+<h5 class="text-success">$500</h5>
+<p>Latest Android smartphone with 8GB RAM and 128GB Storage.</p>
+<label>Quantity</label>
+<input type="number" class="form-control quantity" min="1" value="1">
+<button class="btn btn-primary mt-3 addCart">Add to Cart</button>
+<button class="btn btn-danger mt-2 addWishlist"> Wishlist</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4 product">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" class="card-img-top">
+<div class="card-body">
+<h4 class="product-name">Headphones</h4>
+<h5 class="text-success">$80</h5>
+<p>Wireless Bluetooth headphones with noise cancellation.</p>
+<label>Quantity</label>
+<input type="number" class="form-control quantity" min="1" value="1">
+<button class="btn btn-primary mt-3 addCart">Add to Cart</button>
+<button class="btn btn-danger mt-2 addWishlist">Wishlist</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4 product">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+class="card-img-top">
+<div class="card-body">
+<h4 class="product-name">Smart Watch</h4>
+<h5 class="text-success">1500</h5>
+<p>Fitness tracking smartwatch with heart-rate monitor.</p>
+<label>Quantity</label>
+<input type="number" class="form-control quantity" min="1" value="1">
+<button class="btn btn-primary mt-3 addCart">Add to Cart</button>
+<button class="btn btn-danger mt-2 addWishlist"> Wishlist</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4 product">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" class="card-img-top">
+<div class="card-body">
+<h4 class="product-name">Sports Shoes</h4>
+<h5 class="text-success">15000</h5>
+<p>Comfortable running shoes for men and women.</p>
+<label>Quantity</label>
+<input type="number"class="form-control quantity"min="1"value="1">
+<button class="btn btn-primary mt-3 addCart">Add to Cart</button>
+<button class="btn btn-danger mt-2 addWishlist"> Wishlist</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4 product">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=500" class="card-img-top">
+<div class="card-body">
+<h4 class="product-name">Laptop</h4>
+<h5 class="text-success">50,000</h5>
+<p>15.6-inch laptop with Intel Core i5 processor.</p>
+<label>Quantity</label>
+<input type="number"class="form-control quantity"min="1"value="1">
+<button class="btn btn-primary mt-3 addCart">Add to Cart</button>
+<button class="btn btn-danger mt-2 addWishlist"> Wishlist</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4 product">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500" class="card-img-top">
+<div class="card-body">
+<h4 class="product-name">Backpack</h4>
+<h5 class="text-success">$40</h5>
+<p>Travel backpack with multiple storage compartments.</p>
+<label>Quantity</label>
+<input type="number"class="form-control quantity"min="1"value="1">
+<button class="btn btn-primary mt-3 addCart">Add to Cart</button>
+<button class="btn btn-danger mt-2 addWishlist"> Wishlist</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <h3>My Wishlist</h3>
+        </div>
+        <div class="card-body" id="wishlist">
+            <p>No products added.</p>
+        </div>
+    </div>
+</div>
+<script>
+let cart=0;
+let wishlist = [];
+const buttons=document.querySelectorAll(".addCart");
+buttons.forEach(function(button){
+button.addEventListener("click",function(){
+let quantity=this.parentElement.querySelector(".quantity").value;
+cart=cart+Number(quantity);
+document.getElementById("cartCount").innerHTML=cart;
+alert(quantity+" item(s) added to cart.");
+});
+});
+document.getElementById("search").addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+let products=document.querySelectorAll(".product");
+products.forEach(function(product){
+let name=product.querySelector(".product-name").innerText.toLowerCase();
+if(name.includes(value))
+{
+product.style.display="block";
+}
+else
+{
+product.style.display="none";
+}
+});
+});
+const search = document.getElementById("search");
+search.addEventListener("keyup", function () {
+    let value = search.value.toLowerCase();
+    let products = document.querySelectorAll(".product");
+    products.forEach(function(product){
+        let productName = product.querySelector(".product-name")
+                                 .textContent
+                                 .toLowerCase();
+        if(productName.includes(value)){
+            product.style.display = "block";
+        }
+        else{
+            product.style.display = "none";
+        }
+    });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

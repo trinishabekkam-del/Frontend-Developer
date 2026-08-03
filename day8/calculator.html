@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Grade Calculator</title>
+</head>
+<body>
+    <h1 align="center">Student Grade Calculator</h1>
+    <label>Student Name:</label><br>
+    <input type="text" id="name" placeholder="Enter student name"><br><br>
+    <label>Sub1:</label><br>
+    <input type="number" id="sub1" placeholder="Enter marks for subject 1"><br><br>
+    <label>Sub2:</label><br>
+    <input type="number" id="sub2" placeholder="Enter marks for subject 2"><br><br>
+    <button onclick="calculateGrades()">Calculate </button><br><br>
+    <h3>Result:</h3>
+    <p id="result"></p>
+    <script>
+        function calculateGrades() {
+            let name=document.getElementById("name").value;
+            let sub1 = document.getElementById("sub1").value;
+            let sub2 = document.getElementById("sub2").value;
+            if(name===""|| sub1==="" || sub2==="") {
+                alert("Please enter valid numbers for marks and a name.");
+                return;
+            }
+            sub1=Number(sub1);
+            sub2=Number(sub2);
+            if (sub1 < 0 || sub1 > 100 || sub2 < 0 || sub2 > 100) {
+        alert("Marks should be between 0 and 100.");
+        return;
+    }
+
+            let sum=sub1+sub2;
+            let average=sum/2;
+            let grade;
+            if (average >= 90) {
+                grade = "A";
+            } else if (average >= 80) {
+                grade = "B";
+            } else if (average >= 70) {
+                grade = "C";
+            } else if (average >= 60) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+            
+            document.getElementById("result").innerHTML = 
+                "Student Name: " + name + "<br>" +
+                "Total Marks: " + sum + "<br>" +
+                "Average Marks: " + average.toFixed(2) + "<br>" +
+                "Grade: " + grade;
+            }
+        
+    </script>
+</body>
+</html>

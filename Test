@@ -1,1 +1,119 @@
 
+import {useFormik} from "formik";
+function Form() {
+    const formik = useFormik({
+        initialvalues:{
+            EmployeeName:"",
+            Email:"",
+            MobileNumber:"",
+            Gender:"",
+            Department:"",
+            Salary:"",
+            JoiningDate:"",
+            Password:"",
+            ConfirmPassword:"",
+            TermsAndConditions:"",
+
+        },
+        validate: (values) => {
+            const errors = {};
+            if(!values.EmployeeName==="") {
+                errors.EmployeeName="Enter Employee Name";
+            }else if(values.EmployeeName.length<3){
+                errors.EmployeeName="Enter minimum 3 characters";
+            }
+            if(values.Email==="") {
+                errors.Email="Enter Email";
+            }else if(!values.Email.includes("@")){
+                errors.Email="Enter valid Email";
+            }
+            if(values.MobileNumber==="") {
+                errors.MobileNumber="Enter Mobile Number";
+            }else if(values.MobileNumber.length<10){
+                errors.MobileNumber="Enter valid Mobile Number";
+            }
+            if(values.Gender==="") {
+                errors.Gender="Select Gender";
+            }
+            if(values.Department==="") {
+                errors.Department="Select Department";
+            }
+            if(values.Salary==="") {
+                errors.Salary="Enter Salary";
+            }
+            if(values.JoiningDate==="") {
+                errors.JoiningDate="Select Joining Date";
+            }
+            if(values.Password==="") {
+                errors.Password="Enter Password";
+            }else if(values.Password.length<8){
+                errors.Password="Password must be at least 8 characters";
+            }
+            if(values.ConfirmPassword==="") {
+                errors.ConfirmPassword="Enter Confirm Password";
+            }else if(values.ConfirmPassword!==values.Password){
+                errors.ConfirmPassword="Enter correct Password";
+            }
+            if(values.TermsAndConditions==="") {
+                errors.TermsAndConditions="Accept Terms and Conditions";
+            }
+
+            return errors;
+        },
+        onSubmit:(values ,{resetForm})=>
+        {
+            console.log("Submitted Values",values);
+            alert("successfully Submitted");
+            resetForm();
+        }
+    });
+    return(
+        <div className="container mt-4">
+            <h2 className="text-primary">Employee Registration Form</h2>
+            <label >Employee name</label>
+            <input type="text" className="form-control" name="EmployeeName" value={formik.values.EmployeeName} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.EmployeeName}</p>
+            <label >Email</label>
+            <input type="email" className="form-control" name="Email" value={formik.values.Email} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.Email}</p>
+            <label >Mobile Number</label>
+            <input type="text" className="form-control" name="MobileNumber" value={formik.values.MobileNumber} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.MobileNumber}</p>
+            <label >Gender</label>
+            <select className="form-control" name="Gender" value={formik.values.Gender} onChange={formik.handleChange}>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <p className="text-danger">{formik.errors.Gender}</p>
+            <button type="submit" className="btn btn-primary mt-3" onClick={formik.handleSubmit}>Submit</button>
+            <label >Department</label>
+            <select className="form-control" name="Department" value={formik.values.Department} onChange={formik.handleChange}>
+                <option value="">Select Department</option>
+                <option value="IT">IT</option>
+                <option value="software">software</option>
+                <option value="fullstack">fullstack</option>
+            </select>
+            <p className="text-danger">{formik.errors.Department}</p>
+            <button type="submit" className="btn btn-primary mt-3" onClick={formik.handleSubmit}>Submit</button>
+            <label >Salary</label>
+            <input type="text" className="form-control" name="Salary" value={formik.values.Salary} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.Salary}</p>
+            <label >Joining Date</label>
+            <input type="date" className="form-control" name="JoiningDate" value={formik.values.JoiningDate} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.JoiningDate}</p>
+            <label >Password</label>
+            <input type="password" className="form-control" name="Password" value={formik.values.Password} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.Password}</p>
+            <label >Confirm Password</label>
+            <input type="password" className="form-control" name="ConfirmPassword" value={formik.values.ConfirmPassword} onChange={formik.handleChange} />
+            <p className="text-danger">{formik.errors.ConfirmPassword}</p>
+            <label>
+                <input type="checkbox" name="TermsAndConditions" value={formik.values.TermsAndConditions} onChange={formik.handleChange} />
+                Accept Terms and Conditions
+            </label>
+        </div>
+
+    )
+};
+export default Form;
